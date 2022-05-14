@@ -1,0 +1,54 @@
+set nocompatible
+let mapleader=","
+
+nnoremap <silent> <leader>v :next $MYVIMRC<CR>
+augroup VimReload
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+call plug#begin()
+
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+set background=dark
+colorscheme gruvbox
+
+set noswf
+set nobackup
+set udir=$HOME/.vim/workdir/undo
+set clipboard=unnamed
+set path=.,,**
+
+set nu
+set hidden
+
+set nowrap
+set shortmess+=I
+
+set tabstop=4
+set shiftwidth=4
+set expandtab smarttab
+
+set hlsearch incsearch
+set sb
+
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+
+nnoremap <leader>l :ls<CR>:b<SPACE>
+nnoremap L :bnext
+nnoremap H :bprevious
+
+
+nnoremap <SPACE> /
+inoremap jk <ESC>
+
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
+

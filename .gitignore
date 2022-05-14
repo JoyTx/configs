@@ -1,0 +1,4 @@
+# Don't track vim plugins
+vim/.vim/plugged/
+
+.netrwhist
