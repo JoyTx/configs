@@ -41,8 +41,8 @@ nnoremap <silent> <c-k> :wincmd k<CR>
 nnoremap <silent> <c-l> :wincmd l<CR>
 
 nnoremap <leader>l :ls<CR>:b<SPACE>
-nnoremap L :bnext<CR>
-nnoremap H :bprevious<CR>
+nnoremap <silent>L :bnext<CR>
+nnoremap <silent>H :bprevious<CR>
 
 
 nnoremap <SPACE> /
