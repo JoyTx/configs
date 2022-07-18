@@ -16,9 +16,9 @@ function! NetrwMapping()
 
   nmap <buffer> . gh
   nmap <buffer> P <C-w>z
+  nmap <buffer> L L
 
-  nmap <buffer> L <CR>:Lexplore<CR>
-  nmap <buffer> <Leader>dd :Lexplore<CR>
+  nmap <buffer> <silent> <Leader>dd :Lexplore<CR>
 endfunction
 
 augroup netrw_mapping
@@ -26,5 +26,6 @@ augroup netrw_mapping
   autocmd filetype netrw call NetrwMapping()
 augroup END
 
-nnoremap <leader>dd :Lexplore %:p:h<CR>
-nnoremap <Leader>da :Lexplore<CR>
+nnoremap <silent><leader>dd :Lexplore %:p:h<CR>
+nnoremap <silent><Leader>da :Lexplore<CR>
+nnoremap <silent><Leader>du :Lexplore $URT<CR>

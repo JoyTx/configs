@@ -6,6 +6,7 @@ augroup VimReload
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
+let $URT=split(&rtp, ',')[0]
 
 call plug#begin()
 
@@ -20,13 +21,15 @@ set noswf
 set nobackup
 set udir=$HOME/.vim/workdir/undo
 set clipboard=unnamed
-set path=.,,**
 
-set nu
+set wildmode=longest:list,full
+
+set nu rnu
 set hidden
 
 set nowrap
 set shortmess+=I
+set laststatus=0
 
 set tabstop=4
 set shiftwidth=4
@@ -44,11 +47,9 @@ nnoremap <leader>l :ls<CR>:b<SPACE>
 nnoremap <silent>L :bnext<CR>
 nnoremap <silent>H :bprevious<CR>
 
-
 nnoremap <SPACE> /
 inoremap jk <ESC>
 
 let &t_SI = "\e[6 q"
 let &t_SR = "\e[4 q"
 let &t_EI = "\e[2 q"
-
